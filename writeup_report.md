@@ -81,23 +81,13 @@ So I had 13768 samples in total. I then preprocessed this data by randomly shuff
 
 * **Solution Design Approach**
 
-The overall strategy for deriving a model architecture was to ...
-
-My first step was to use a convolution neural network model similar to the ... I thought this model might be appropriate because ...
-
-In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. This implied that the model was overfitting. 
-
-To combat the overfitting, I modified the model so that ...
-
-Then I ... 
-
+The overall strategy for deriving a model architecture was to ...My first step was to use a convolution neural network model similar to the ... I thought this model might be appropriate because ...In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. This implied that the model was overfitting. To combat the overfitting, I modified the model so that ...Then I ... 
 The final step was to run the simulator to see how well the car was driving around track one. There were a few spots where the vehicle fell off the track... to improve the driving behavior in these cases, I ....
-
 At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
 
 * **Final Model Architecture**
 
-The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes:
+The final model architecture (model.py lines 44-57) consisted of a convolution neural network with the following layers and layer sizes:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -120,18 +110,13 @@ Here is a visualization of the architecture from the tensorboard
 
 ![alt text][image1]
 
-
 ---
 
 #### 3. Training Strategy
-Attempts to reduce overfitting in the model
-
-The model contains dropout layers in order to reduce overfitting (model.py lines 21). 
-
-The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 10-16). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
-
-The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 25).
-
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... I used an adam optimizer so that manually training the learning rate wasn't necessary.
-
+* Attempts to reduce overfitting in the model. The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 10-16). 
 ![alt text][image8]
+I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... 
+
+* The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 63).
+* The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+
