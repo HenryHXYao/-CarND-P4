@@ -81,9 +81,9 @@ So I had 13768 samples in total. I then preprocessed this data by randomly shuff
 
 * **Solution Design Approach**
 
-The overall strategy for deriving a model architecture was to ...My first step was to use a convolution neural network model similar to the ... I thought this model might be appropriate because ...In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. This implied that the model was overfitting. To combat the overfitting, I modified the model so that ...Then I ... 
-The final step was to run the simulator to see how well the car was driving around track one. There were a few spots where the vehicle fell off the track... to improve the driving behavior in these cases, I ....
-At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
+My first step was to use a convolution neural network model similar to the ... I thought this model might be appropriate because ...In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. This implied that the model was underfitting. The final step was to run the simulator to see how well the car was driving around track one. There were a few spots where the vehicle fell off the track... to improve the driving behavior in these cases, I ....
+
+To combat the overfitting, I modified the model so that ...Then I ... At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
 
 * **Final Model Architecture**
 
@@ -106,18 +106,18 @@ The final model architecture (model.py lines 44-57) consisted of a convolution n
 | Fully connected | ouptuts	10	|
 | Fully connected | ouptuts	1	|
 
-Here is a visualization of the architecture from the tensorboard
+Here is a visualization of the architecture from the tensorboard:
 
 ![alt text][image1]
 
 ---
 
 #### 3. Training Strategy
-* The sample data was splitted into training set(80%) and validation set(20%). The model was trained on the training set and validated on the validation set (code line 64). The loss was selected to be the mean square error. The following is the training loss and validation loss with 10 epochs:
+* The sample data was splitted into training set(80%) and validation set(20%). The model was trained on the training set and validated on the validation set (code line 64). The loss was selected to be the Mean Square Error. The following is the training loss and validation loss with 10 epochs:
 
 ![alt text][image8]
 
-The training loss and validation loss were both low, therefore, the model didn't have the problem of overfitting and underfitting.
+The training loss and validation loss were both low, therefore the model didn't have the problem of overfitting and underfitting.
 
 * The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 63).
 * The model was finally tested by running it through the simulator and the [results](https://github.com/HenryHXYao/CarND-P4/blob/master/video.mp4) showed that the vehicle could stay on the track. 
