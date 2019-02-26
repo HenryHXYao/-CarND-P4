@@ -52,35 +52,27 @@ The model.py file contains the code for training and saving the convolution neur
 
 #### Data Collection
 
-Training data was chosen to keep the vehicle driving on the road. I used a combination of center lane driving, recovering from the left and right sides of the road ... 
-
-For details about how I created the training data, see the next section. 
-To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
+Training data was chosen to keep the vehicle driving on the road. To capture good driving behavior, I recorded 4 laps on track-1 using center lane driving. Two of the 4 laps were clockwise and the others were counter-clockwise. There were 3442 center images in total and here is an example image of center lane driving:
 
 ![alt text][image2]
 
-I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to .... These images show what a recovery looks like starting from ... :
+When the center images were recorded while driving, the left and right images were also captured. SO I used the left and right images to teach the vehicle to go back to the center line with correction = 0.1. The reason to choose left and right images rather than recording recovering driving from the sides of the road were:
+* The left and right images were recorded all along the entire track
+* you didn't need to teach the vehicle go back to the center manually
+Here are the images captured by the left, center and right cameras:
 
 |left|center|right|
 |-|-|-|
 |![alt text][image3]|![alt text][image4]|![alt text][image5]|
 
-Then I repeated this process on track two in order to get more data points.
-
-To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
+Finaly, I flipped the center images and angles to augment the data set. This approach provided additional 3442 images for training. here is an image that has then been flipped:
 
 ![alt text][image6]
 ![alt text][image7]
 
-Etc ....
-
-After the collection process, I had X number of data points. I then preprocessed this data by ...
-
-I finally randomly shuffled the data set and put Y% of the data into a validation set. 
-
+So I had 13768 samples in total. I then preprocessed this data by normalizing the data, randomly shuffling the data set and splitting 20% of the data into a validation set. 
 
 ---
-
 
 #### Model Architecture
 
