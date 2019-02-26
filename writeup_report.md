@@ -87,7 +87,7 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 
 * **Final Model Architecture**
 
-The final model architecture (model.py lines 44-57) consisted of a convolution neural network with the following layers and layer sizes:
+The final model architecture (model.py lines 44-57) consisted of a convolution neural network with the following layers and layer sizes, total parameters = 2712951:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -113,7 +113,7 @@ Here is a visualization of the architecture from the tensorboard
 ---
 
 #### 3. Training Strategy
-* Attempts to reduce overfitting in the model. The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 10-16). 
+* The sample data was splitted into training set(80%) and validation set(20%). The model was trained on the training set and validated on the validation set (code line 64). THe following is the training loss and 
 ![alt text][image8]
 I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... 
 
