@@ -58,7 +58,7 @@ Training data was chosen to keep the vehicle driving on the road. To capture goo
 
 When the center images were recorded while driving, the left and right images were also captured at the same time. So I used the left and right images to teach the vehicle to go back to the center line with correction = 0.1. 
 
-The reason to choose left and right images rather than recording recovering driving from the sides of the road are:
+The reasons to choose left and right images rather than recording recovering driving from the sides of the road are:
 * The left and right images were recorded all along the entire track, so it could provide more data than recording recovering driving at some spots on the track.
 * You didn't need to teach the vehicle to go back to the center manually, which is quite exhausting compared to driving on the center line.
 * In the simulator, it is possible to drive the car to the side of the road and then recover it to the center for the purpose of aquiring useful training data. However, it is almost impossible to do the same thing in the real world considering safety issues. Therefore, using the left and right images is an approach that has more potential to be implemented on real autonomous cars. 
