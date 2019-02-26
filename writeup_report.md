@@ -105,10 +105,10 @@ The final model architecture (model.py lines 18-24) consisted of a convolution n
 | Nomalization                   |      output  160x320x3                          |
 | Cropping2D   |   output 65x320x3  |
 | Convolution 5x5     	| 24 filters, 2x2 stride, valid padding, relu activation, outputs 31x158x24 	|		
-| Convolution 5x5	    | 36 filters, 2x2 stride, valid padding, outputs 14x77x36				|	
-| Convolution 5x5	    | 48 filters, 2x2 stride, valid padding, outputs 5x37x48				|	
-| Convolution 3x3	    | 64 filters, 1x1 stride, valid padding, outputs 3x35x64				|	
-| Convolution 3x3	    | 64 filters, 1x1 stride, valid padding, outputs 1x33x64				|	
+| Convolution 5x5	    | 36 filters, 2x2 stride, valid padding, relu activation, outputs 14x77x36				|	
+| Convolution 5x5	    | 48 filters, 2x2 stride, valid padding, relu activation, outputs 5x37x48				|	
+| Convolution 3x3	    | 64 filters, 1x1 stride, valid padding, relu activation, outputs 3x35x64				|	
+| Convolution 3x3	    | 64 filters, 1x1 stride, valid padding, relu activation, outputs 1x33x64				|	
 |Flatten |      outputs 2112           |
 | Fully connected | ouptuts	1164|
 | Fully connected | ouptuts	100	|
