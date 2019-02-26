@@ -104,12 +104,12 @@ The final model architecture (model.py lines 18-24) consisted of a convolution n
 | Input         		| 160x320x3 color image   							| 
 | Nomalization                   |      output  160x320x3                          |
 | Cropping2D   |   output 65x320x3  |
-| Convolution 5x5     	| 24 filters, 2x2 stride, valid padding, relu activation, outputs 28x28x24 	|		
-| Convolution 5x5	    | 80 filters, 1x1 stride, valid padding, outputs 10x10x80				|	
-| Convolution 5x5	    | 80 filters, 1x1 stride, valid padding, outputs 10x10x80				|	
-| Convolution 5x5	    | 80 filters, 1x1 stride, valid padding, outputs 10x10x80				|	
-| Convolution 5x5	    | 80 filters, 1x1 stride, valid padding, outputs 10x10x80				|	
-|Flatten |      outputs 2000           |
+| Convolution 5x5     	| 24 filters, 2x2 stride, valid padding, relu activation, outputs 31x158x24 	|		
+| Convolution 5x5	    | 36 filters, 2x2 stride, valid padding, outputs 14x77x36				|	
+| Convolution 5x5	    | 48 filters, 2x2 stride, valid padding, outputs 5x37x48				|	
+| Convolution 3x3	    | 64 filters, 1x1 stride, valid padding, outputs 3x35x64				|	
+| Convolution 3x3	    | 64 filters, 1x1 stride, valid padding, outputs 1x33x64				|	
+|Flatten |      outputs 2112           |
 | Fully connected | ouptuts	1164|
 | Fully connected | ouptuts	100	|
 | Fully connected | ouptuts	50	|
@@ -130,9 +130,8 @@ The model contains dropout layers in order to reduce overfitting (model.py lines
 
 The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 10-16). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
-Model parameter tuning
-
 The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 25).
 
 I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... I used an adam optimizer so that manually training the learning rate wasn't necessary.
+
 ![alt text][image8]
