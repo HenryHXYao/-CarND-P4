@@ -81,9 +81,9 @@ So I had 13768 samples in total. I then preprocessed this data by randomly shuff
 
 * **Solution Design Approach**
 
-My first step was to use a convolution neural network model similar to the ... I thought this model might be appropriate because ...In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. This implied that the model was underfitting. The final step was to run the simulator to see how well the car was driving around track one. There were a few spots where the vehicle fell off the track... to improve the driving behavior in these cases, I ....
+My first step was to use LeNet-5. After training process, I found that my first model had both high mean squared errors (about 0.05) on the training set and the validation set. This implied that the model was underfitting. When I ran my model on the simulator, the vehicle ran out of the road occasionally.
 
-To combat the overfitting, I modified the model so that ...Then I ... At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
+To combat the underfitting, I added more convolutional layers and fully connected layers to the model. Then the training error decreased to be 0.0042 and the validation error decreased to be 0.0058, which were both low and indicated good performance. Then I test my model again,  this time the vehicle was able to drive autonomously around the track without leaving the road.
 
 * **Final Model Architecture**
 
