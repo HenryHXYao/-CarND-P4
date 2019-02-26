@@ -50,7 +50,7 @@ The model.py file contains the code for training and saving the convolution neur
 
 ### Data Collection, Model Architecture and Training Strategy
 
-#### Data Collection
+#### 1.Data Collection
 
 Training data was chosen to keep the vehicle driving on the road. To capture good driving behavior, I recorded 4 laps on track-1 using center lane driving. Two of the 4 laps were clockwise and the others were counter-clockwise. There were 3442 center images in total and here is an example center image:
 
@@ -77,7 +77,7 @@ So I had 13768 samples in total. I then preprocessed this data by randomly shuff
 
 ---
 
-#### Model Architecture
+#### 2.Model Architecture
 
 * **Solution Design Approach**
 
@@ -96,30 +96,25 @@ The final step was to run the simulator to see how well the car was driving arou
 At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
 
 * **Final Model Architecture**
-My model consists of a convolution neural network with 3x3 filter sizes and depths between 32 and 128 (model.py lines 18-24) 
 
-The model includes RELU layers to introduce nonlinearity (code line 20), and the data is normalized in the model using a Keras lambda layer (code line 18). 
-
-The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes ...
+The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x1 gray normalized image   							| 
-| Convolution 5x5     	| 80 filters, 1x1 stride, valid padding, outputs 28x28x80 	|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 14x14x80				|
-| Convolution 5x5	    | 80 filters, 1x1 stride, valid padding, outputs 10x10x80				|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 5x5x80				|
+| Input         		| 160x320x3 color image   							| 
+| Nomalization                   |      output  160x320x3                          |
+| Cropping2D   |   output 65x320x3  |
+| Convolution 5x5     	| 24 filters, 2x2 stride, valid padding, relu activation, outputs 28x28x24 	|		
+| Convolution 5x5	    | 80 filters, 1x1 stride, valid padding, outputs 10x10x80				|	
+| Convolution 5x5	    | 80 filters, 1x1 stride, valid padding, outputs 10x10x80				|	
+| Convolution 5x5	    | 80 filters, 1x1 stride, valid padding, outputs 10x10x80				|	
+| Convolution 5x5	    | 80 filters, 1x1 stride, valid padding, outputs 10x10x80				|	
 |Flatten |      outputs 2000           |
-| Fully connected | ouptuts	120|
-| RELU					|												|
-| Dropout					|												|
-| Fully connected | ouptuts	84	|
-| RELU					|												|
-| Dropout					|												|
-| Fully connected | ouptuts	43	|
-| Softmax				| 			|
+| Fully connected | ouptuts	1164|
+| Fully connected | ouptuts	100	|
+| Fully connected | ouptuts	50	|
+| Fully connected | ouptuts	10	|
+| Fully connected | ouptuts	1	|
 
 Here is a visualization of the architecture from the tensorboard
 
@@ -128,7 +123,7 @@ Here is a visualization of the architecture from the tensorboard
 
 ---
 
-#### Training Strategy
+#### 3.Training Strategy
 Attempts to reduce overfitting in the model
 
 The model contains dropout layers in order to reduce overfitting (model.py lines 21). 
