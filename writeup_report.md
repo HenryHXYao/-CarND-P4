@@ -20,6 +20,7 @@ The goals / steps of this project are the following:
 [image5]: ./images/right.jpg "right Image"
 [image6]: ./images/center.jpg "center Image"
 [image7]: ./images/center_flip.jpg "center flip Image"
+[image8]: ./images/train_valid_loss.png "loss"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
@@ -126,4 +127,4 @@ The model was trained and validated on different data sets to ensure that the mo
 The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 25).
 
 I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... I used an adam optimizer so that manually training the learning rate wasn't necessary.
-
+![alt text][image8]
