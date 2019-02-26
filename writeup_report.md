@@ -52,20 +52,21 @@ The model.py file contains the code for training and saving the convolution neur
 
 #### Data Collection
 
-Training data was chosen to keep the vehicle driving on the road. To capture good driving behavior, I recorded 4 laps on track-1 using center lane driving. Two of the 4 laps were clockwise and the others were counter-clockwise. There were 3442 center images in total and here is an example image of center lane driving:
+Training data was chosen to keep the vehicle driving on the road. To capture good driving behavior, I recorded 4 laps on track-1 using center lane driving. Two of the 4 laps were clockwise and the others were counter-clockwise. There were 3442 center images in total and here is an example center image:
 
 ![alt text][image2]
 
-When the center images were recorded while driving, the left and right images were also captured. SO I used the left and right images to teach the vehicle to go back to the center line with correction = 0.1. The reason to choose left and right images rather than recording recovering driving from the sides of the road were:
-* The left and right images were recorded all along the entire track
-* you didn't need to teach the vehicle go back to the center manually
-Here are the images captured by the left, center and right cameras:
+When the center images were recorded while driving, the left and right images were also captured. So I used the left and right images to teach the vehicle to go back to the center line with correction = 0.1. The reason to choose left and right images rather than recording recovering driving from the sides of the road are:
+* The left and right images were recorded all along the entire track, so it could provide more data than recording recovering driving at some spots on the track.
+* You didn't need to teach the vehicle to go back to the center manually, which is quite exhausting compared to driving on the center line.
+
+The left and right images provided 6884 samples, which is twice of the center images. Here are the images captured by the left, center and right cameras:
 
 |left|center|right|
 |-|-|-|
 |![alt text][image3]|![alt text][image4]|![alt text][image5]|
 
-Finaly, I flipped the center images and angles to augment the data set. This approach provided additional 3442 images for training. here is an image that has then been flipped:
+Finaly, I flipped the center images and angles to augment the data set. This approach provided additional 3442 images for training. Here is an image that has then been flipped:
 
 ![alt text][image6]
 ![alt text][image7]
