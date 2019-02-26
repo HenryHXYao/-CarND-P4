@@ -56,7 +56,7 @@ Training data was chosen to keep the vehicle driving on the road. To capture goo
 
 ![alt text][image2]
 
-When the center images were recorded while driving, the left and right images were also captured. So I used the left and right images to teach the vehicle to go back to the center line with correction = 0.1. 
+When the center images were recorded while driving, the left and right images were also captured at the same time. So I used the left and right images to teach the vehicle to go back to the center line with correction = 0.1. 
 
 The reason to choose left and right images rather than recording recovering driving from the sides of the road are:
 * The left and right images were recorded all along the entire track, so it could provide more data than recording recovering driving at some spots on the track.
@@ -83,11 +83,11 @@ So I had 13768 samples in total. I then preprocessed this data by randomly shuff
 
 My first step was to use LeNet-5. After training process, I found that my first model had both high mean squared errors (about 0.05) on the training set and the validation set. This implied that the model was underfitting. When I ran my model on the simulator, the vehicle ran out of the road occasionally.
 
-To combat the underfitting, I added more convolutional layers and fully connected layers to the model. Then the training error decreased to be 0.0042 and the validation error decreased to be 0.0058, which were both low and indicated good performance. Then I test my model again,  this time the vehicle was able to drive autonomously around the track without leaving the road.
+To combat the underfitting, I added more convolutional layers and fully connected layers to the model. Then the training error decreased to be 0.0042 and the validation error decreased to be 0.0058 which were both low, thus indicating good performance. Then I test my model again, this time the vehicle was able to drive autonomously around the track without leaving the road.
 
 * **Final Model Architecture**
 
-The final model architecture (model.py lines 44-57) consisted of a convolution neural network with the following layers and layer sizes, total parameters = 2712951:
+The final model architecture (model.py lines 44-57)(which refered to [Nvidia's CNN](https://devblogs.nvidia.com/deep-learning-self-driving-cars/) ) consisted of a convolution neural network with the following layers and layer sizes, total parameters = 2712951:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
