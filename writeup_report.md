@@ -50,7 +50,7 @@ The model.py file contains the code for training and saving the convolution neur
 
 ### Data Collection, Model Architecture and Training Strategy
 
-#### 1.Data Collection
+#### 1. Data Collection
 
 Training data was chosen to keep the vehicle driving on the road. To capture good driving behavior, I recorded 4 laps on track-1 using center lane driving. Two of the 4 laps were clockwise and the others were counter-clockwise. There were 3442 center images in total and here is an example center image:
 
@@ -77,7 +77,7 @@ So I had 13768 samples in total. I then preprocessed this data by randomly shuff
 
 ---
 
-#### 2.Model Architecture
+#### 2. Model Architecture
 
 * **Solution Design Approach**
 
@@ -123,7 +123,7 @@ Here is a visualization of the architecture from the tensorboard
 
 ---
 
-#### 3.Training Strategy
+#### 3. Training Strategy
 Attempts to reduce overfitting in the model
 
 The model contains dropout layers in order to reduce overfitting (model.py lines 21). 
