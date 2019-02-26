@@ -13,7 +13,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./images/graph_large_attrs_key=_too_large_attrs&limit_attr_size=1024&run=.png "Model Visualization"
+[image1]: ./images/graph.png "Model Visualization"
 [image2]: ./images/center.jpg "center_image"
 [image3]: ./images/left.jpg "left Image"
 [image4]: ./images/center.jpg "center Image"
