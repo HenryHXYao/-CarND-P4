@@ -60,7 +60,7 @@ When the center images were recorded while driving, the left and right images we
 * The left and right images were recorded all along the entire track, so it could provide more data than recording recovering driving at some spots on the track.
 * You didn't need to teach the vehicle to go back to the center manually, which is quite exhausting compared to driving on the center line.
 
-The left and right images provided 6884 samples, which is twice of the center images. Here are the images captured by the left, center and right cameras:
+The left and right images provided 6884 samples, which is twice as the number of the center images. Here are the images captured by the left, center and right cameras:
 
 |left|center|right|
 |-|-|-|
@@ -71,7 +71,7 @@ Finaly, I flipped the center images and angles to augment the data set. This app
 ![alt text][image6]
 ![alt text][image7]
 
-So I had 13768 samples in total. I then preprocessed this data by normalizing the data, randomly shuffling the data set and splitting 20% of the data into a validation set. 
+So I had 13768 samples in total. I then preprocessed this data by randomly shuffling the data set and splitting 20% of the data into a validation set. 
 
 ---
 
