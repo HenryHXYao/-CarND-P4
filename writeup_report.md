@@ -113,10 +113,12 @@ Here is a visualization of the architecture from the tensorboard
 ---
 
 #### 3. Training Strategy
-* The sample data was splitted into training set(80%) and validation set(20%). The model was trained on the training set and validated on the validation set (code line 64). THe following is the training loss and 
+* The sample data was splitted into training set(80%) and validation set(20%). The model was trained on the training set and validated on the validation set (code line 64). The loss was selected to be the mean square error. The following is the training loss and validation loss with 10 epochs:
+
 ![alt text][image8]
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... 
+
+The training loss and validation loss were both low, therefore, the model didn't have the problem of overfitting and underfitting.
 
 * The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 63).
-* The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+* The model was finally tested by running it through the simulator and the [results](https://github.com/HenryHXYao/CarND-P4/blob/master/video.mp4) showed that the vehicle could stay on the track. 
 
