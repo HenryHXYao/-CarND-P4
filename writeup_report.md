@@ -102,10 +102,28 @@ The model includes RELU layers to introduce nonlinearity (code line 20), and the
 
 The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes ...
 
-Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
+| Layer         		|     Description	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| Input         		| 32x32x1 gray normalized image   							| 
+| Convolution 5x5     	| 80 filters, 1x1 stride, valid padding, outputs 28x28x80 	|
+| RELU					|												|
+| Max pooling	      	| 2x2 stride,  outputs 14x14x80				|
+| Convolution 5x5	    | 80 filters, 1x1 stride, valid padding, outputs 10x10x80				|
+| RELU					|												|
+| Max pooling	      	| 2x2 stride,  outputs 5x5x80				|
+|Flatten |      outputs 2000           |
+| Fully connected | ouptuts	120|
+| RELU					|												|
+| Dropout					|												|
+| Fully connected | ouptuts	84	|
+| RELU					|												|
+| Dropout					|												|
+| Fully connected | ouptuts	43	|
+| Softmax				| 			|
+
+Here is a visualization of the architecture from the tensorboard
 
 ![alt text][image1]
-
 
 
 ---
