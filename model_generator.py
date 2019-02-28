@@ -49,8 +49,10 @@ def generator(samples, batch_size=32):
             yield shuffle(X_train, y_train) 
 
 # compile and train the model using the generator function
-train_generator = generator(train_samples, batch_size=32)
-validation_generator = generator(validation_samples, batch_size=32)     
+batch_size = 32
+
+train_generator = generator(train_samples, batch_size)
+validation_generator = generator(validation_samples, batch_size)     
 
 # define the model(NvidiaNet)
 from keras.models import Sequential
@@ -80,8 +82,8 @@ from keras.callbacks import TensorBoard
 # generate tensorboard for visualization
 tensorboard = TensorBoard(log_dir='./logs') 
 model.compile(loss='mse', optimizer = 'adam')
-model.fit_generator(train_generator, steps_per_epoch= ceil(len(train_samples)/32),
-validation_data=validation_generator, validation_steps=ceil(len(validation_samples)/32), epochs=10, verbose = 1, callbacks=[tensorboard])
+model.fit_generator(train_generator, steps_per_epoch= ceil(len(train_samples)/batch_size),
+validation_data=validation_generator, validation_steps=ceil(len(validation_samples)/batch_size), epochs=10, verbose = 1, callbacks=[tensorboard])
 
 # save the model
 model.save('model_track_1plus2.h5')
